@@ -1,9 +1,10 @@
 <template>
   <div class="photo-list">
     <PhotoThumb
-    v-for="photo in listOfPhotos"
-    :key="photo"
+    v-for="(photo, i) in this.$store.state.photos"
+    :key="i"
     @click="click(photo)"
+    :photo="photo"
     />
   </div>
 </template>
@@ -16,7 +17,6 @@ export default {
   },
   data () {
     return {
-      listOfPhotos: [1, 2, 3]
     }
   },
   methods: {
@@ -33,5 +33,14 @@ export default {
   flex-direction: column;
   width: max-content;
   margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .photo-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 80%;
+    place-content: center;
+  }
 }
 </style>

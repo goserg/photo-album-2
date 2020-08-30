@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <h1 class="roboto-condensed">Test app</h1>
+    <h1 class="roboto-condensed">Фото альбом</h1>
   </div>
 </template>
 

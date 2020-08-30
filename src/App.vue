@@ -37,9 +37,11 @@ export default {
   methods: {
     click (e) {
       this.showModal = true
+      document.querySelector('body').style = 'overflow: hidden;'
     },
     closeModal () {
       this.showModal = false
+      document.querySelector('body').style = 'overflow: auto;'
     }
   }
 }
@@ -60,6 +62,12 @@ export default {
   transition: all .3s ease;
 }
 .modal-enter, .modal-leave-to {
-  transform: translateY(100%);
+  transform: translateX(-100%);
+}
+@media (min-width: 600px) {
+  .modal-enter, .modal-leave-to {
+    opacity: 0;
+    transform: translateX(0);
+  }
 }
 </style>
